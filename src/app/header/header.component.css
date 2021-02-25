@@ -1,0 +1,67 @@
+.mainHeader nav {
+  background: #fff;
+  color: #000;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mainHeader .navbar-brand {
+  height: 105px;
+}
+
+.example3 nav {
+  background: #1A1A1A;
+  color: #fff;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.fixedHeader.affix {
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background-color: rgba(26, 26, 26, 0.70);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+
+
+
+
+
+
+.example3 .nav > a {
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
+
+.example3 .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+
+
+.social {
+  display: inline-block;
+  line-height: 2.4em;
+  margin-left: 1em;
+  float: right;
+}
+
+  .social a {
+    display: inline-block;
+    color: #1a1a1a;
+    margin: 0 0.5em;
+    text-decoration: none;
+  }
+
+    .social a:hover,
+    .social a:focus,
+    .social a.current {
+      color: #fff;
+    }

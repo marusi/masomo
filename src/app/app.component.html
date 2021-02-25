@@ -1,0 +1,288 @@
+
+
+
+<app-header></app-header>
+
+
+<div class="col-md-6">
+  <h4>{{ info.exam_name}}</h4>
+  <ol class="list-items">
+    <li class="list-items-row">
+      <div class="row">
+        <div class="entity-list  ">
+          <div class="entity-list-item ">
+            <div class="item-icon">
+              <img src="{{ info.student_photo}}" />
+            </div>
+            <div class="item-content-secondary">
+              <div class="content-text-primary"> {{ info.overall_position.deviation }} </div>
+              <div class="content-text-secondary "></div>
+            </div>
+            <div class="item-content-primary">
+              <div class="content-text-primary color-primary">{{ info.student_name }} in {{ info.class_name }}</div>
+              <div class="content-text-secondary">Admission No:{{ info.student_admission_number }} </div>
+
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </li>
+  </ol>
+  <!-- Nav tabs -->
+  <p>Position</p>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#overall" aria-controls="overall" role="tab" data-toggle="tab">Overall </a></li>
+    <li role="presentation"><a href="#stream" aria-controls="stream" role="tab" data-toggle="tab">Stream</a></li>
+    <li role="presentation"><a href="#mean" aria-controls="mean" role="tab" data-toggle="tab">Mean Grade</a></li>
+
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="overall">
+      <div class="type-t2">{{ info.overall_position.position}}  / {{ info.overall_position.position_out_of}}  </div>
+
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="stream">
+      <div class="type-t2"> {{ info.stream_position.position}}  / {{ info.stream_position.position_out_of}} </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="mean">
+      <div class="type-t2">{{ info.mean_marks.avg_score}} % <span class="type-t3"> {{ info.mean_grade }} </span>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+    <a class="btn btn-lightweight no-outline navigation-btn">Father John Misty</a>
+    <ul role="navigation" id="sidenav-small" class="nav side-navigation side-navigation-small theme-default">
+      <button type="button" class="close" data-dismiss="side-navigation" aria-label="close">
+        <i class="glyph glyph-cancel"></i>
+      </button>
+
+      <li class="active side-nav-c2">
+        <a data-toggle="collapse" data-parent="#sidenav-small" href="#father-john-misty" aria-expanded="true" aria-controls="#father-john-misty">principals_remarks</a>
+        <ul class="nav collapse in" id="father-john-misty">
+          <li><a href="#sidenav-small">{{ info.principals_remarks }}</a></li>
+
+        </ul>
+      </li>
+      <li class="side-nav-c2">
+        <a data-toggle="collapse" data-parent="#sidenav-small" href="#the-national" aria-expanded="false" aria-controls="#the-national">teachers_remarks</a>
+        <ul class="nav collapse" id="the-national">
+          <li><a href="#sidenav-small">{{ info.class_teachers_remarks}}</a></li>
+
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+
+
+</div>
+<div class="col-md-15 " style="background: #858484;">
+
+  <ol class="list-items">
+    <li class="list-items-row">
+      <div data-toggle="collapse" aria-expanded="false" data-target="#list-item-line-1">
+        <div class="container" style=" color: #ffffff">
+          <div class="row ">
+            <div class="col-md-24 type-h3">
+
+              <i class="glyph glyph-expand"></i>
+              Subjects
+
+              <i class="glyph glyph-chevron-right"></i>
+              <i class="glyph glyph-chevron-down"></i>
+
+            </div>
+
+
+          </div>
+          <div class="col-md-12 ">
+
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="list-item-line-1">
+        <div class="row">
+          <div class="row row-sm section-gallery ">
+            <div class="col-md-12" *ngFor="let subject of info.subject_results">
+
+
+
+
+
+              <div class="entity-list ">
+                <div class="entity-list-item well  hoverwell thumbnail ">
+                  <div class="item-icon">
+
+                  </div>
+                  <div class="item-content-secondary">
+                    {{  subject.rank }} /  {{  subject.rank_out_of }}
+                  </div>
+                  <div class="item-content-primary">
+                    <div class="content-text-primary"> {{  subject.subject_name }}</div>
+                    <div class="content-text-secondary"> {{  subject.comment }}</div>
+                  </div>
+                  <br />
+                  <blockquote class="content-text-primary"> {{  subject.score }}% {{  subject.grade }} </blockquote>
+
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </li>
+    <li class="list-items-row">
+      <div data-toggle="collapse" aria-expanded="false" data-target="#list-item-line-2">
+        <div class="container" style=" color: #ffffff">
+          <div class="row">
+            <div class="col-md-24 type-h3">
+              <i class="glyph glyph-people "></i>
+              Performance History
+
+              <i class="glyph glyph-chevron-right"></i>
+              <i class="glyph glyph-chevron-down"></i>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="collapse" id="list-item-line-2">
+        <div class="row">
+          <ol class="list-items">
+            <li class="list-items-row">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-24">
+
+                    <div class="table-responsive">
+                      <table  class="table table-striped theme-alt">
+                        <thead>
+                          <tr>
+                            <th>Exam</th>
+                            <th class="text-right">>Score</th>
+                        
+                          </tr>
+                        </thead>
+                        <tbody *ngFor="let history of info.student_performance_over_time">
+                          <tr>
+                            <td>{{ history.exam_name }}</td>
+
+                            <td class="text-right">{{ history.avg_score }}%</td>
+                          </tr>
+
+                         
+
+
+                        </tbody>
+                      </table>
+
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </li>
+
+
+  </ol>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="col-md-3" style="background: #acacac;">
+
+
+</div>
+
+
+
+
+<div style="display: block;">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div [@myAnimation]="o.isActivated ? o.activatedRoute : ''">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a href="#top" class="back-to-top theme-dark bunksgrey">
+    <i class="glyph glyph-up"></i>
+    <span class="sr-only">Back to top</span>
+  </a>

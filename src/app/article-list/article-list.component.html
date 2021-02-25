@@ -1,0 +1,89 @@
+
+
+
+
+
+
+
+
+
+
+<ol class="list-items">
+  <li class="list-items-row">
+
+  </li>
+
+  <li class="list-items-row" *ngFor="let p of queryResult.items">
+    <div class="row">
+      <div class="entity-list ">
+        <div class="entity-list-item " [routerLink]="['/articles/', p.id]">
+          <div class="item-icon">
+            <span class="glyph glyph-people"></span>
+          </div>
+          <div class="item-content-secondary">
+              <div class="content-text-tertiary "> <span class="label label-info">{{ p.bunk.dateOfEvent | date:'shortDate'  }}</span>  </div>
+          </div>
+
+          <div class="item-content-primary">
+
+            <div class="content-text-primary "> {{ p.newsCategory.name}}</div>
+            <div class="content-text-secondary">{{ p.bunk.title }}, {{ p.bunk.subTitle }} </div>
+
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </li>
+</ol>
+<div class="row">
+    <div class="col-md-2">
+      <div class="col-md-4"></div>
+
+      <div class="putbox-content col-md-18">
+        Filter
+
+        <div class="content-title color-4 well"><span class="glyph glyph-cancel color-type-secondary type-sh2" (click)="resetFilter()">Reset</span></div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+
+    <div class="col-md-4">
+
+      <div class="putbox-content">
+        <div class="content-title">Category:</div>
+
+        <div class="combobox">
+          <select title="Category" style="border-color: #b200ff;"
+                  [(ngModel)]="query.newsEventId" (change)="onFilterChange()" id="category" class="form-control">
+            <option value="">All</option>
+            <option *ngFor="let c of newsEvents" value="{{ c.id }}">{{ c.name }}</option>
+          </select>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-md-4">
+
+
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+
+
+
+<app-pagination [total-items]="queryResult.totalItems" [page-size]="query.pageSize" (page-changed)="onPageChange($event)"></app-pagination>
+
+
+
